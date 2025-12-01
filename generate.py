@@ -115,4 +115,4 @@ midi_directory = "midi_files/" + composer
 output_file = "markov_midi_files/" + composer + "_generated.mid"
 
 if __name__ == "__main__":
-    run(composer, midi_directory, output_file)
+    run(midi_directory, output_file)
