@@ -28,14 +28,10 @@ def generate_markov_matrix(notes):
         curr = notes[i]
         next = notes[i+1]
         matrix[curr, next] += 1
+    # Laplace smoothing (add-one smoothing)
     matrix += 1
-    row_sums = matrix.sum(axis=1, keepdims=True)
-    # give uniform probability to notes that never appeared
-    if np.any(row_sums == 0):
-        zero_rows = np.where(row_sums == 0)[0]
-        matrix[zero_rows, :] = 1
-        row_sums[zero_rows] = 12
     # normalize
+    row_sums = matrix.sum(axis=1, keepdims=True)
     prob_matrix = matrix / row_sums
     return prob_matrix
 
