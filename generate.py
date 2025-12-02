@@ -110,7 +110,7 @@ def run(midi_directory, output_midi):
 
     print(f"Successfully generated MIDI file")
 
-composer = "beethoven"
+composer = "mixed"
 midi_directory = "midi_files/" + composer
 output_file = "markov_midi_files/" + composer + "_generated.mid"
 
